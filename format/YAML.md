@@ -1,12 +1,12 @@
-# YAML Format Specification (`KA:RE1:YAML1`)
+# YAML Format Specification (`KA:MR1:YAML1`)
 
 ## Overview
 
-This document specifies the YAML format for defining MorpheRepo (`KA:RE1`) data access contracts. The `KA:RE1:YAML1` format serves as the canonical base format for the MorpheRepo ecosystem, providing a human-readable syntax for defining repository interfaces.
+This document specifies the YAML format for defining MorpheRepo (`KA:MR1`) data access contracts. The `KA:MR1:YAML1` format serves as the canonical base format for the MorpheRepo ecosystem, providing a human-readable syntax for defining repository interfaces.
 
 ## Supported Features
 
-The `KA:RE1:YAML1` format supports all core MorpheRepo specification features:
+The `KA:MR1:YAML1` format supports all core MorpheRepo specification features:
 
 - **Identifiers** - Primary and secondary identifier definitions
 - **Filters** - ForOne-derived filter parameters
@@ -318,7 +318,7 @@ operations:
 
 ## Contributing
 
-See the main [MorpheRepo `KA:RE1` specification](../README.md) for contribution guidelines.
+See the main [MorpheRepo `KA:MR1` specification](../README.md) for contribution guidelines.
 
 ## License
 

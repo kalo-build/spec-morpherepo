@@ -1,4 +1,4 @@
-# MorpheRepo Specification (KA:RE1) - Data Access Contract Modeling
+# MorpheRepo Specification (KA:MR1) - Data Access Contract Modeling
 
 ## Table of Contents
 
@@ -20,7 +20,7 @@
 
 ## Overview
 
-MorpheRepo (KA:RE1) is a language-agnostic data access contract specification derived from Morphe (KA:MO1) model definitions. It describes the interface between application code and data persistence, defining what operations are available for each model, how models can be identified, and what filtering parameters are supported.
+MorpheRepo (KA:MR1) is a language-agnostic data access contract specification derived from Morphe (KA:MO1) model definitions. It describes the interface between application code and data persistence, defining what operations are available for each model, how models can be identified, and what filtering parameters are supported.
 
 The specification decouples the "what does the data access contract look like" question from "what language or framework am I targeting." A MorpheRepo definition can be compiled into Go interfaces, TypeScript types, Java interfaces, or any other language-specific repository abstraction.
 
@@ -28,24 +28,24 @@ The specification decouples the "what does the data access contract look like" q
 
 Version | Status | Description | Docs
 --------|---------|------------|------
-KA:RE1 | In Progress | First stable release of the MorpheRepo core specification | This document
-KA:RE1:YAML1 | In Progress | YAML format standard for KA:RE1 | [format/YAML.md](format/YAML.md)
-KA:RE1:GO1 | In Progress | Go format standard for KA:RE1 | Planned
+KA:MR1 | In Progress | First stable release of the MorpheRepo core specification | This document
+KA:MR1:YAML1 | In Progress | YAML format standard for KA:MR1 | [format/YAML.md](format/YAML.md)
+KA:MR1:GO1 | In Progress | Go format standard for KA:MR1 | Planned
 
 ## Specification Hierarchy
 
 The MorpheRepo specification follows the same hierarchical naming scheme as Morphe:
 
-### Base Specification (`KA:RE1`)
+### Base Specification (`KA:MR1`)
 - `KA:` - Organization/context prefix
 - `RE1` - Base specification identifier (Repository version 1)
 
-### Format Specification (`KA:RE1:YAML1`)
+### Format Specification (`KA:MR1:YAML1`)
 - Extends base specification with format identifier
 - `YAML1` - Format representation identifier (YAML version 1)
 
 ### Base Format
-**YAML** (`KA:RE1:YAML1`) serves as the canonical base format, consistent with the Morphe ecosystem.
+**YAML** (`KA:MR1:YAML1`) serves as the canonical base format, consistent with the Morphe ecosystem.
 
 ## Key Features
 
