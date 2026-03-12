@@ -114,7 +114,7 @@ identifiers:
 
 ### Filters
 
-Filters define optional parameters for list/query operations. They are derived from `ForOne` and `ForOnePoly` relationships in the Morphe model.
+Filters define optional parameters for list/query operations. They are derived from `ForOne` and `ForOnePoly` relationships in the Morphe model. When a source relation has the `optional` attribute, the derived filter is also marked optional.
 
 Each filter has a name (the Go-style parameter name), a Morphe field type, and a reference to the source relationship.
 
@@ -150,8 +150,10 @@ MorpheRepo is designed as a downstream specification from Morphe. The derivation
 | Model name | Repository `model` reference |
 | `identifiers.primary` | Primary identifier |
 | `identifiers.{name}` (secondary) | Secondary identifiers |
+| `rel:` identifier fields | Resolved to foreign key field(s) of the referenced relation |
 | `ForOne` relationships | Filter parameters |
 | `ForOnePoly` relationships | Filter parameters (using `through` name if present) |
+| Relation `attributes: [optional]` | Optional filter (filter may be omitted in queries) |
 | `HasOne`, `HasMany` relationships | Not represented (no filters) |
 
 ## Specification Features
@@ -163,6 +165,8 @@ MorpheRepo is designed as a downstream specification from Morphe. The derivation
 | **Operations** | Per-model CRUD operation configuration | Complete |
 | **CompositeIdentifiers** | Multi-field identifier support | Complete |
 | **PolymorphicFilters** | Filters from ForOnePoly relationships | Complete |
+| **RelationIdentifiers** | `rel:` prefixed identifier fields resolved to foreign keys | Complete |
+| **OptionalFilters** | Filters from optional relations marked as optional | Complete |
 
 ## Contributing
 

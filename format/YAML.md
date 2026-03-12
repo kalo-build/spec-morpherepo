@@ -87,6 +87,31 @@ identifiers:
         type: String
 ```
 
+### Relation-Derived Identifier Fields
+
+When a Morphe model identifier uses `rel:` prefixed fields, MorpheRepo resolves them to the foreign key field(s) of the referenced relation:
+
+```yaml
+# Morphe model:
+# identifiers:
+#   taskTag: [rel:Task, rel:Tag]
+#
+# MorpheRepo resolution:
+identifiers:
+  primary:
+    fields:
+      - name: ID
+        type: UUID
+  taskTag:
+    fields:
+      - name: TaskID
+        type: UUID
+      - name: TagID
+        type: UUID
+```
+
+For `ForOnePoly` relations, both the type and ID fields are included.
+
 ### Identifier Field Reference
 
 | Field | Type | Required | Description |
@@ -105,6 +130,23 @@ filters:
     relation: Organization
 ```
 
+### Optional Filters
+
+When the source Morphe relation has the `optional` attribute, the filter is marked optional:
+
+```yaml
+filters:
+  - name: projectID
+    type: UUID
+    relation: Project
+    optional: true
+  - name: authorID
+    type: UUID
+    relation: Author
+```
+
+Optional filters may be omitted in list queries. Required filters (the default) must always be provided.
+
 ### Filter Field Reference
 
 | Field | Type | Required | Description |
@@ -112,6 +154,7 @@ filters:
 | `name` | string | Yes | Parameter name (camelCase with ID suffix) |
 | `type` | string | Yes | Morphe field type of the referenced model's primary identifier |
 | `relation` | string | Yes | Source relationship name from the Morphe model |
+| `optional` | boolean | No | Whether the filter is optional (derived from relation `optional` attribute). Default: `false` |
 
 ### Empty Filters
 
